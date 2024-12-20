@@ -8,14 +8,16 @@ const Blog = () => {
 
     return (
         <>
-            <div className="">
+            <div className="h-screen ">
                 <Header darkMode={darkMode} />
-                <div className={`flex  h-full md:flex-row items-center justify-center   p-4 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} shadow-md`}>
+                <div className={`flex h-screen md:flex-row items-center justify-center ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} shadow-md`}>
                     {/* Main Article */}
-                    <div className="flex flex-col m-4">
+
+                    <div className="flex flex-col ">
                         <div className="">
                             <MainArticle />
                         </div>
+
                         {/*Bottom Article */}
                         <div className="flex items-center justify-center">
                             <BottomArticle />
@@ -29,19 +31,17 @@ const Blog = () => {
                     
 
                     {/* Right side Article */}
-                    <div className="">
-                        <RightArticle />
-                        <RightArticle />
-                        <RightArticle />
-                        <RightArticle />
-                        <RightArticle />
-                        <RightArticle />
 
+                    <div className="mr-5 overflow-y-scroll">
+                     <div className="">
+                     <RightArticle />
                         <RightArticle />
-
-
-
-
+                        <RightArticle />
+                        <RightArticle />
+                        <RightArticle />
+                        <RightArticle />
+                        <RightArticle />
+                     </div>
                     </div>
                 </div>
             </div>

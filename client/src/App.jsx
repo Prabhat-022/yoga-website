@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast'
 import EditProfile from "./component/EditProfile"
 import Admin from "./component/Admin/Admin"
 import Blog from "./component/Blog/Blog"
+import CreateArticle from "./component/CreatearticleDashboard.jsx/CreateArticle"
 
 
 const App = () => {
@@ -39,6 +40,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/create-article" element={<CreateArticle />} />
+          
           
           <Route path="/admin" element={<Admin darkMode={darkMode} setDarkMode={setDarkMode} />} />
         </Routes>

@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv/config.js'
 import { databaseConnection } from './database/databaseConnection.js';
 import userRoutes from './routes/userRoutes.js'
+import articleRoutes from './routes/articleRoutes.js'
 import cors from 'cors'
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use("/api/user", userRoutes)
+app.use("/api/articles", articleRoutes)
 
 app.listen(port, () => {
     databaseConnection()

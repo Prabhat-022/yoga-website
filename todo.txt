@@ -2,4 +2,8 @@
 ->)given the access to user to change the profile picture after registration, by adminprofile 
 ->)Modified the blog page 
 ->)Given the auteri
+->)add free editor for react js and remove tinymce
+->)save  all the post in db
+->)fetch the all the article endpoints to article
+
 
