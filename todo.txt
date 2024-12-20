@@ -1,0 +1,5 @@
+5) Edit profile page
+->)given the access to user to change the profile picture after registration, by adminprofile 
+->)Modified the blog page 
+->)Given the auteri
+
