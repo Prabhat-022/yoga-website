@@ -31,7 +31,7 @@ const Register = () => {
 
         const formData = new FormData();
         formData.append("fullName", registerdata.fullName);
-        formData.append("email", registerdata.email);
+        formData.append("email", registerdata.email.toLocaleLowerCase());
         formData.append("phone", registerdata.phone);
         formData.append("password", registerdata.password);
         formData.append("address", registerdata.address);

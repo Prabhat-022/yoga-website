@@ -11,6 +11,7 @@ import EditProfile from "./component/EditProfile"
 import Admin from "./component/Admin/Admin"
 import Blog from "./component/Blog/Blog"
 import CreateArticle from "./component/CreatearticleDashboard.jsx/CreateArticle"
+import Article from "./component/Blog/Article"
 
 
 const App = () => {
@@ -40,7 +41,9 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/create-article" element={<CreateArticle />} />
+          <Route path="/post" element={<CreateArticle />} />
+          <Route path="/article" element={<Article />} />
+
           
           
           <Route path="/admin" element={<Admin darkMode={darkMode} setDarkMode={setDarkMode} />} />

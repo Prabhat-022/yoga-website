@@ -5,5 +5,9 @@
 ->)add free editor for react js and remove tinymce
 ->)save  all the post in db
 ->)fetch the all the article endpoints to article
+->)fetch the article by id
+->)add the article in the blog page
+->)add the article in the blog page
+->)read the how to send data in request body formdata url and query params
 
 

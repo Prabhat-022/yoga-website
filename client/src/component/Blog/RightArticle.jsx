@@ -1,19 +1,25 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const RightArticle = () => {
     const [more, setMore] = useState(false)
-
+    const navigate = useNavigate()
+    
     const handlemore = () => {
 
         setMore(!more)
     }
+    const handleArticle = () => {
+
+        navigate('/article')
+    }
     return (
         <>
-            <div className="cursor-pointer">
-                <img src="https://plus.unsplash.com/premium_photo-1661589014272-34d69ee95a57?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='w-20 ' />
+            <div className="cursor-pointer p-4">
+                <img src="https://plus.unsplash.com/premium_photo-1661589014272-34d69ee95a57?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='w-full object-cover' />
 
                 <div className="">
-                    <h1 className='font-bold text-2xl'>About Grout Discussion</h1>
+                    <h1 className='font-bold text-2xl' onClick={handleArticle}>About Grout Discussion</h1>
                     <p className='text-sm'>Grout Discussion is a platform that helps people discuss and solve problems related to grout. Grout is a type of construction material used to fill in gaps between tiles, </p>
                     {
                         more && <p>

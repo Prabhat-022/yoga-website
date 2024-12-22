@@ -1,6 +1,4 @@
-import React from 'react';
 import { 
-  Person,
   Dashboard,
   People,
   Settings,
@@ -9,9 +7,13 @@ import {
   Notifications,
   Email
 } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
+
 
 const AdminProfile = () => {
   const darkMode = true;
+const users = useSelector((store) => store?.user?.user)
+
   
   return (
     <div className={`min-h-screen p-6 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
@@ -30,11 +32,12 @@ const AdminProfile = () => {
         <div className="flex flex-col items-center mb-10">
           <div className="relative">
             <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-              <Person className="w-16 h-16 text-white" />
+              {/* <Person className="w-16 h-16 text-white" /> */}
+              <img src={users?.avatar} alt="" className='w-16 h-16 rounded-full' />
             </div>
             <div className="absolute bottom-0 right-0 bg-green-500 w-5 h-5 rounded-full border-4 border-gray-900"></div>
           </div>
-          <h1 className="text-3xl font-bold mt-4">John Smith</h1>
+          <h1 className="text-3xl font-bold mt-4">{users?.fullName}</h1>
           <p className="text-gray-400 mt-1">Super Admin</p>
         </div>
 

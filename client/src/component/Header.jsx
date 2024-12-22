@@ -8,7 +8,18 @@ const Header = ({ darkMode, setDarkMode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const navigate = useNavigate()
     const users = useSelector((store) => store?.user?.user)
+    const getuser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+    console.log('getuser', getuser)
 
+    const handleaccount = () => {
+        if (users?.userType === "user") {
+            navigate('/account')
+        }
+        else if (users?.userType === "admin") {
+            navigate('/admin')
+        }
+
+    }
 
     return (
         <div className="sticky top-0 z-50">
@@ -61,12 +72,12 @@ const Header = ({ darkMode, setDarkMode }) => {
                     <div className="">
                         <button
                             className={`p-2 flex items-center ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} rounded-lg`}
-                            onClick={() => navigate('/account')}
+                            onClick={handleaccount}
                         >
-                                <h1 className='text-xl font-bold'>{users?.fullName}</h1>
-                                <p1 className=''>{users?.userType}</p1>
+                                <h1 className='text-xl font-bold'>{users?.fullName || getuser?.fullName}</h1>
+                                <p1 className=''>{users?.userType || getuser?.userType}</p1>
 
-                            <img src={users?.avatar || " "} alt="" className='w-8 h-8 rounded-full mx-2' />
+                            <img src={users?.avatar || getuser?.avatar || " "} alt="" className='w-8 h-8 rounded-full mx-2' />
                         </button>
                     </div>
                     <button

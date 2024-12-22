@@ -13,10 +13,7 @@ const articleSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    auther: {
-        type: String,
-        require: true
-    },
+    
     avatar: {
         type: String, // cloudinary url
         required: true,

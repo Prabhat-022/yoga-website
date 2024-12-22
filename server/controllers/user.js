@@ -105,6 +105,7 @@ export const Register = async (req, res) => {
 
     } catch (error) {
         console.log(`Account not created: ${error}`);
+        
         return res.status(500).json({
             message: "An error occurred while creating the account",
             success: false,

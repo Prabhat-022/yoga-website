@@ -1,19 +1,24 @@
 import { useState } from 'react';
 import img from '../../assets/cute girl.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const MainArticle = () => {
     const [more, setMore] = useState(false)
+    const navigate = useNavigate()
 
     const handlemore = () => {
 
         setMore(!more)
     }
+    const handleArticle = () => {
+        navigate('/article')
+    }
 
     return (
         <>
-            <div className="h-screen flex items-center justify-center top-0">
+            <div className="h-full w-full flex items-center justify-center top-0 mt-2">
                 <div className="w-1/2 ">
-                    <h1 className='text-3xl font-bold'>This is the Cute girl</h1>
+                    <h1 className='text-3xl font-bold cursor-pointer' onClick={handleArticle}>This is the Cute girl</h1>
 
                     <img src={img} alt="" className='w-full h-[400px] object-cover' />
                     <div className="text-center">

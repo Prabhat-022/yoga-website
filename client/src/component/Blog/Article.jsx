@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import moment from "moment"
+
 import { Facebook, Twitter, Instagram } from '@mui/icons-material';
 
 const Article = () => {
@@ -30,7 +30,7 @@ const Article = () => {
                     <p className="text-2xl">{subtitle}</p>
                     <p className="flex items-center">
                         <span className="mr-2">{author}</span>
-                        <span className="mr-2">{moment(createdAt).format("MMMM Do, YYYY")}</span>
+                        {/* <span className="mr-2">{moment(createdAt).format("MMMM Do, YYYY")}</span> */}
                         <Facebook />
                         <Twitter className="ml-2" />
                         <Instagram className="ml-2" />

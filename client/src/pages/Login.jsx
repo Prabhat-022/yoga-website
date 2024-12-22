@@ -12,10 +12,10 @@ const Login = () => {
         email: "",
         password: "",
     });
-     
+
     const navigate = useNavigate();
-const dispatch = useDispatch();
-    
+    const dispatch = useDispatch();
+
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -26,8 +26,9 @@ const dispatch = useDispatch();
 
             if (res.data.success) {
                 toast.success("Login successful")
+                localStorage.setItem('user', JSON.stringify(res.data.user));
                 dispatch(setloginuser(res.data.user))
-                    navigate("/home")
+                navigate("/home")
             }
 
             console.log(res.data)
@@ -81,7 +82,7 @@ const dispatch = useDispatch();
                                 />
                             </div>
                         </div>
-                
+
                         <div>
                             <button
                                 type="submit"
